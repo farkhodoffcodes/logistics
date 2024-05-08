@@ -1,17 +1,27 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Home from './pages/Home'
+import { useEffect } from 'react';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Layout } from './pages/Layout';
+import { ROUTES, ROUTES_ARRAY } from './routes';
 
 const App = () => {
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (pathname === '/') {
+      navigate(ROUTES.dashboard.path);
+    }
+  }, [navigate, pathname]);
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        {ROUTES_ARRAY.map((route) => (
+          <Route key={route.path} path={route.path} element={route.component} />
+        ))}
+      </Route>
+    </Routes>
+  );
+};
 
-      </Routes>
-      <h1>Hello</h1>
-    </>
-  )
-}
-
-export default App
+export default App;
