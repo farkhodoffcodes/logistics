@@ -1,6 +1,8 @@
-<h1>DASHBOARD & LOGIN & HOME PAGE - ALISHER</h1>
-<h1>PROJECT & WAREHOUSE  - HASAN</h1>
-<h1>USERS - JAHONSHER</h1>
-<h1>CASHIER - LANGUAGE - MADI</h1>
-<h1>RESPONSIVE - AZIZ</h1>
-<h1>MANAGE ACCOUNT - USER - ADMIN - CASHIER - ADHAM</h1>
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
