@@ -1,6 +1,6 @@
 import { Cashier, Dashboard, Project, Users, Warehouse } from '../pages';
 
-export const ROUTES = {
+export const PROTECTED_ROUTES = {
   dashboard: {
     path: '/dashboard',
     title: 'Dashboard',
@@ -28,4 +28,4 @@ export const ROUTES = {
   },
 };
 
-export const ROUTES_ARRAY = Object.values(ROUTES);
+export const PROTECTED_ROUTES_ARRAY = Object.values(PROTECTED_ROUTES);

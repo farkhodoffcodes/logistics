@@ -1,1 +1,1 @@
-export { ROUTES, ROUTES_ARRAY } from './routes';
+export { PROTECTED_ROUTES, PROTECTED_ROUTES_ARRAY } from './routes';

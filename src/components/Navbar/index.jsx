@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ROUTES_ARRAY } from '../../routes';
 import styled from 'styled-components';
+import { PROTECTED_ROUTES_ARRAY } from '../../routes';
 
 const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar = () => {
       <Container>
         <div className='nav'>
           <span>Logo</span>
-          {ROUTES_ARRAY.map((navItem) => (
+          {PROTECTED_ROUTES_ARRAY.map((navItem) => (
             <Link key={navItem.path} to={navItem.path}>
               {navItem.title}
             </Link>
