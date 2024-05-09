@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* TYPOGRAPHY */
   --text-small-size: 14px;
@@ -7,12 +11,6 @@
 
   /* BUTTON STYLES */
   --normal-button-border-style: 1px solid #222;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 h1 {
