@@ -38,7 +38,7 @@ const Login = () => {
       setItem("role", data.message);
 
       if (role === "ROLE_ADMIN") {
-        navigate("/dashboard"); 
+        navigate("/dashboard");
         return;
       } else if (role === "ROLE_MANAGER") {
         navigate("/manager");
@@ -55,7 +55,7 @@ const Login = () => {
       setIsLoading(false);
     } catch (error) {
       toast.error(error.message);
-      console.log(error.response.data);
+      console.log(error);
       setIsLoading(false);
     }
   };
