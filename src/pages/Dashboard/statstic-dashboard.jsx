@@ -1,6 +1,19 @@
 import ReactECharts from "echarts-for-react";
+import { useEffect, useState } from "react";
+import ProductsService from "../../services/products";
 
 export const StatisticDashboard = () => {
+  const [data, setData] = useState([]);
+
+  const getDiagram = async () => {
+    const data = await ProductsService.getProductsDiagram();
+    setData(data.data.data.body);
+  };
+
+  useEffect(() => {
+    getDiagram();
+  }, []);
+
   const option = {
     tooltip: {
       trigger: "axis",
@@ -14,7 +27,7 @@ export const StatisticDashboard = () => {
     xAxis: [
       {
         type: "category",
-        data: ["Aprel  2024"],
+        data: data,
         axisTick: {
           alignWithLabel: true,
         },
@@ -27,10 +40,10 @@ export const StatisticDashboard = () => {
     ],
     series: [
       {
-        name: "Direct",
+        name: "direct",
         type: "bar",
         barWidth: "80%",
-        data: [1],
+        data: data,
       },
     ],
   };

@@ -1,6 +1,23 @@
 import ReactECharts from "echarts-for-react";
+import { useEffect, useState } from "react";
+import ProductsService from "../../services/products";
 
 export const Dashboard = () => {
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    try {
+      const data = await ProductsService.getProductsStatistic();
+      setData(data.data.data.body);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   const option = {
     tooltip: {
       trigger: "item",
@@ -29,20 +46,14 @@ export const Dashboard = () => {
         labelLine: {
           show: false,
         },
-        data: [
-          { value: 1, name: "Readiy" },
-          // { value: 735, name: "Direct" },
-          // { value: 580, name: "Email" },
-          // { value: 484, name: "Union Ads" },
-          // { value: 300, name: "Video Ads" },
-        ],
+        data: data,
       },
     ],
   };
 
   return (
     <div className="w-96">
-      <ReactECharts option={option}/>
+      <ReactECharts option={option} />
     </div>
   );
 };
