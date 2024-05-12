@@ -1,0 +1,16 @@
+{
+  "buttons": {
+    "add": "Add",
+    "download": "Download"
+  },
+  "navbar": {
+    "dashboard": "Dashboard",
+    "project": "Project",
+    "warehouse": "Warehouse",
+    "cashier": "Cashier",
+    "users": "Users"
+  },
+  "table": {
+    "username": "User name"
+  }
+}

@@ -5,6 +5,8 @@ import { Layout } from './pages/Layout';
 import Login from './pages/Login';
 import { PROTECTED_ROUTES, PROTECTED_ROUTES_ARRAY } from './routes';
 
+import './utils/i18n/i18n';
+
 const App = () => {
   const navigate = useNavigate();
   const token = sessionStorage.getItem('token');

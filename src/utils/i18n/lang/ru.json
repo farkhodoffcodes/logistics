@@ -1,0 +1,16 @@
+{
+  "buttons": {
+    "add": "Добавить",
+    "download": "Скачать"
+  },
+  "navbar": {
+    "dashboard": "Панель приборов",
+    "project": "Проект",
+    "warehouse": "Склад",
+    "cashier": "Кассир",
+    "users": "Пользователи"
+  },
+  "table": {
+    "username": "имя пользователя"
+  }
+}

@@ -1,10 +1,21 @@
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { logo } from '../../assets/images';
-import AdminIcon from '../../assets/icons/admin.png';
 import styled from 'styled-components';
+import AdminIcon from '../../assets/icons/admin.png';
+import { logo } from '../../assets/images';
 import { PROTECTED_ROUTES_ARRAY } from '../../routes';
+import { useState } from 'react';
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
+  const [lang, setLang] = useState(i18n.language);
+
+  const onChangeLanguage = (e) => {
+    const value = e.target.value;
+    setLang(value);
+    i18n.changeLanguage(value);
+  };
+
   return (
     <>
       <Container>
@@ -16,7 +27,7 @@ const Navbar = () => {
           />
           {PROTECTED_ROUTES_ARRAY.map((navItem) => (
             <Link key={navItem.path} to={navItem.path}>
-              {navItem.title}
+              {t(`navbar.${navItem.title.toLowerCase()}`)}
             </Link>
           ))}
         </div>
@@ -24,8 +35,12 @@ const Navbar = () => {
           <button>
             <img src={AdminIcon} alt='admin' />
           </button>
-          <select className='uppercase outline-none shadow-sm text-xl py-2 px-6 font-bold rounded-full'>
-            <option value='eng'>Eng</option>
+          <select
+            onChange={onChangeLanguage}
+            value={lang}
+            className='uppercase outline-none shadow-sm text-xl py-2 px-6 font-bold rounded-full'
+          >
+            <option value='en'>Eng</option>
             <option value='ru'>Rus</option>
           </select>
         </div>

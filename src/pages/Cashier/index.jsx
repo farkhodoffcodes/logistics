@@ -1,19 +1,21 @@
 import styled from 'styled-components';
 import 'flowbite';
+import { useTranslation } from 'react-i18next';
 // import { bgImage } from '../../assets/images';
 
 export const Cashier = () => {
+  const { t } = useTranslation();
   return (
     <>
       <Container>
         <div className='tool-menu'>
           <div>
-            <button className='btn'>Add</button>
-            <button className='btn-dwl'>Download</button>
+            <button className='btn'>{t('buttons.add')}</button>
+            <button className='btn-dwl'>{t('buttons.download')}</button>
           </div>
           <div className='srch'>
             <form className='max-w-sm mx-auto'>
-              <label for='underline_select' className='sr-only'>
+              <label htmlFor='underline_select' className='sr-only'>
                 Underline select
               </label>
               <select id='underline_select' className='search'>
@@ -73,7 +75,7 @@ export const Cashier = () => {
                   #
                 </th>
                 <th scope='col' className='px-6 py-3'>
-                  User name
+                  {t('table.username')}
                 </th>
                 <th scope='col' className='px-6 py-3'>
                   Project name
