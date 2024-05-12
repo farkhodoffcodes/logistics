@@ -1,6 +1,6 @@
-import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
-import ProductsService from "../../services/products";
+import ReactECharts from 'echarts-for-react';
+import { useEffect, useState } from 'react';
+import ProductsService from '../../services/products';
 
 export const Dashboard = () => {
   const [data, setData] = useState([]);
@@ -20,27 +20,27 @@ export const Dashboard = () => {
 
   const option = {
     tooltip: {
-      trigger: "item",
+      trigger: 'item',
     },
     legend: {
-      top: "5%",
-      left: "center",
+      top: '5%',
+      left: 'center',
     },
     series: [
       {
-        name: "Access From",
-        type: "pie",
-        radius: ["40%", "70%"],
+        name: 'Access From',
+        type: 'pie',
+        radius: ['40%', '70%'],
         avoidLabelOverlap: false,
         label: {
           show: false,
-          position: "center",
+          position: 'center',
         },
         emphasis: {
           label: {
             show: true,
             fontSize: 25,
-            fontWeight: "bold",
+            fontWeight: 'bold',
           },
         },
         labelLine: {
@@ -52,7 +52,7 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="w-96">
+    <div className='w-96'>
       <ReactECharts option={option} />
     </div>
   );

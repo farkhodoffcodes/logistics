@@ -1,6 +1,6 @@
-import ReactECharts from "echarts-for-react";
-import { useEffect, useState } from "react";
-import ProductsService from "../../services/products";
+import ReactECharts from 'echarts-for-react';
+import { useEffect, useState } from 'react';
+import ProductsService from '../../services/products';
 
 export const StatisticDashboard = () => {
   const [data, setData] = useState([]);
@@ -16,17 +16,17 @@ export const StatisticDashboard = () => {
 
   const option = {
     tooltip: {
-      trigger: "axis",
+      trigger: 'axis',
     },
     grid: {
-      left: "4%",
-      right: "4%",
-      bottom: "1%",
+      left: '4%',
+      right: '4%',
+      bottom: '1%',
       containLabel: true,
     },
     xAxis: [
       {
-        type: "category",
+        type: 'category',
         data: data,
         axisTick: {
           alignWithLabel: true,
@@ -35,21 +35,21 @@ export const StatisticDashboard = () => {
     ],
     yAxis: [
       {
-        type: "value",
+        type: 'value',
       },
     ],
     series: [
       {
-        name: "direct",
-        type: "bar",
-        barWidth: "80%",
+        name: 'direct',
+        type: 'bar',
+        barWidth: '80%',
         data: data,
       },
     ],
   };
 
   return (
-    <div className="w-full">
+    <div className='w-full'>
       <ReactECharts option={option} />
     </div>
   );

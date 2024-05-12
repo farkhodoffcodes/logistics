@@ -1,38 +1,43 @@
-import { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login/index";
-import { Admin, Cashier, Manager, User } from "./pages/role/index";
+import { useEffect } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Home from './pages/Home';
+import { Layout } from './pages/Layout';
+import Login from './pages/Login';
+import { PROTECTED_ROUTES, PROTECTED_ROUTES_ARRAY } from './routes';
 
 const App = () => {
   const navigate = useNavigate();
-  const token = sessionStorage.getItem("token");
-  const role = sessionStorage.getItem("role");
+  const token = sessionStorage.getItem('token');
+  const role = sessionStorage.getItem('role');
+  const isAdmin = token && role === 'ROLE_ADMIN';
 
   useEffect(() => {
-    if (!token) {
-      navigate("/");
-    } else if (token && role === "ROLE_ADMIN") {
-      navigate("/dashboard");
-    } else if (token && role === "ROLE_MANAGER") {
-      navigate("/manager-dashboard");
-    } else if (token && role === "ROLE_USER") {
-      navigate("/user-dashboard");
-    } else if (token && role === "ROLE_CASHIER") {
-      navigate("/cashier-dashboard");
+    if (isAdmin) {
+      navigate(PROTECTED_ROUTES.dashboard.path);
+    } else {
+      navigate('/');
     }
-  }, [token]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  return (
+  const AdminRoutes = () => (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/dashboard" element={<Admin />} />
-      <Route path="/manager-dashboard" element={<Manager />} />
-      <Route path="/user-dashboard" element={<User />} />
-      <Route path="/cashier-dashboard" element={<Cashier />} />
+      <Route path='/' element={<Layout />}>
+        {PROTECTED_ROUTES_ARRAY.map((route) => (
+          <Route key={route.path} path={route.path} element={route.component} />
+        ))}
+      </Route>
     </Routes>
   );
+
+  const CommonRoutes = () => (
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Login />} />
+    </Routes>
+  );
+
+  return isAdmin ? <AdminRoutes /> : <CommonRoutes />;
 };
 
 export default App;
