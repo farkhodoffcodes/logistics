@@ -15,7 +15,7 @@ const Server = () => {
         <span className="text-[#1b648c]">Shipping</span> & Logistic <br />
         Services
       </h1>
-      <div className="flex justify-between gap-20 mt-5">
+      <div className="flex justify-around flex-wrap mt-10 lg:w-9/12 md:w-10/12 w-full">
         <div
           data-aos="fade-right"
           data-aos-easing="linear"

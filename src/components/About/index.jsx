@@ -10,13 +10,13 @@ const About = () => {
       <div className='p-0 m-0'>
         <img src={tracking} alt='tracking' />
       </div>
-      <div className='flex justify-center'>
-        <div>
+      <div className='flex justify-center max-sm:block'>
+        <div className='lg:w-6/12'>
           <h4
             data-aos='fade-right'
             data-aos-easing='linear'
             data-aos-duration='700'
-            className='text-5xl font-medium tracking-wider mt-5'
+            className='md:text-5xl text-3xl font-semibold font-sans tracking-wider leading-normal aos-init aos-animate max-sm:pt-100'
           >
             Deliver Your <span className='text-[#1b648c]'>Logistic</span> <br />
             Safely & Quickly
@@ -34,7 +34,7 @@ const About = () => {
           data-aos='fade-up'
           data-aos-easing='linear'
           data-aos-duration='700'
-          className='w-2/4 -mt-44'
+          className='w-2/4 -mt-44 important lg:px-20 px-5 lg:pt-20 w-full flex lg:flex-row flex-wrap-reverse'
         >
           <img src={kontainer} alt='' />
         </div>
