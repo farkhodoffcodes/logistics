@@ -1,10 +1,11 @@
-import { Cashier, Dashboard, Project, Users, Warehouse } from '../pages';
+import { Cashier, Project, Users, Warehouse } from '../pages';
+import Admin from '../pages/role/admin';
 
 export const PROTECTED_ROUTES = {
   dashboard: {
     path: '/dashboard',
     title: 'Dashboard',
-    component: <Dashboard />,
+    component: <Admin />,
   },
   project: {
     path: '/project',
