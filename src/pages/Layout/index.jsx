@@ -20,8 +20,8 @@ export const Layout = () => {
 };
 
 const Container = styled.div`
-  width: 1320px;
-  margin: 0 auto;
+  // width: 1320px;
+  // margin: 0 auto;
 
   .layout {
     display: flex;
