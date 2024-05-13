@@ -67,13 +67,13 @@ const Login = () => {
       </div>
       <section className='w-[28rem] flex h-full items-center justify-center '>
         <div className='w-full bg-white rounded-xl shadow border md:mt-0 sm:max-w-md xl:p-0 border-[#f55520]'>
-          <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
+          <div className='p-6 space-y-4 md:space-y-6 sm:p-8 md:py-10 md:px-12'>
             <form
               onSubmit={(e) => e.preventDefault()}
               className='space-y-4 md:space-y-6 px-3'
               action='#'
             >
-              <div>
+              <div className=''>
                 <label htmlFor='number' className='block mb-2 text-lg'>
                   Id Number
                 </label>

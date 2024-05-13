@@ -30,7 +30,8 @@ const Header = () => {
     <header className='flex top-5 z-50 justify-between w-full pr-10 items-center fixed py-4 bg-white max-sm:fixed max-sm:full'>
       <div className='flex gap-5 ml-28'>
         <img className='w-auto h-10 max-sm:hidden' src={logo} alt='logo' />
-
+        
+        <i onClick={toggleFuc} className={`fa-solid fa-bars sm:hidden max-sm:relative`}></i>
         <ul className='header flex gap-5 items-center max-sm:hidden '>
           {navItems.map((item) => (
             <li key={item.label}>

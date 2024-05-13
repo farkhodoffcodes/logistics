@@ -10,7 +10,7 @@ export const Layout = () => {
           <header>
             <Navbar />
           </header>
-          <main>
+          <main> 
             <Outlet />
           </main>
         </div>
@@ -32,4 +32,5 @@ const Container = styled.div`
   .layout main {
     flex-grow: 1;
   }
+
 `;

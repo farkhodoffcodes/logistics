@@ -15,30 +15,44 @@ const Navbar = () => {
     setLang(value);
     i18n.changeLanguage(value);
   };
+  const [toggle, setToggle] = useState(false);
 
+  const toggleFuc = () => setToggle(!toggle);
   return (
     <>
       <Container>
-        <div className='nav'>
+        <div className='nav max-sm:absolute'>
           <img
-            className='w-auto h-10 lg:block sm:hidden'
+            className='w-auto h-10 lg:block max-sm:hidden'
             src={logo}
             alt='logo'
           />
-          {PROTECTED_ROUTES_ARRAY.map((navItem) => (
-            <Link key={navItem.path} to={navItem.path}>
+          
+          <i onClick={toggleFuc} className={`fa-solid fa-bars sm:hidden max-sm:absolute max-sm:ml-[10px]`}></i>
+         {PROTECTED_ROUTES_ARRAY.map((navItem) => (
+            <Link key={navItem.path} to={navItem.path} className='max-sm:hidden'>
               {t(`navbar.${navItem.title.toLowerCase()}`)}
             </Link>
           ))}
         </div>
+        <nav className={toggle ? 'block' : 'hidden'}>
+        <div className='max-sm:pt-[120px] '>
+        {PROTECTED_ROUTES_ARRAY.map((navItem) => (
+            <Link key={navItem.path} to={navItem.path} className='max-sm:relative max-sm:block max-sm:pl-[30px]'>
+              {t(`navbar.${navItem.title.toLowerCase()}`)}
+            </Link>
+          ))}
+        </div>
+        </nav>
+        
         <div className='lang'>
-          <button>
+          <button className='max-sm:pl-[600px]'>
             <img src={AdminIcon} alt='admin' />
           </button>
           <select
             onChange={onChangeLanguage}
             value={lang}
-            className='uppercase outline-none shadow-sm text-xl py-2 px-6 font-bold rounded-full'
+            className='uppercase outline-none shadow-sm text-xl py-2 px-6 font-bold rounded-full max-sm:absolute max-sm:ml-[80px]'
           >
             <option value='en'>Eng</option>
             <option value='ru'>Rus</option>
