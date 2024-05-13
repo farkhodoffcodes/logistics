@@ -4,16 +4,18 @@ import { kamaz } from '../../assets/images';
 import About from '../../components/About/index';
 import Server from '../../components/Services/index';
 import Gallery from '../../components/Gallery';
+import { useTranslation } from 'react-i18next';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 // ..
 AOS.init();
 
 const Home = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <Header />
-      <section className='flex w-full items-center justify-center px-24 mt-32 lg:px-20 px-5 lg:flex-row max-sm:block'>
+      <section className='flex w-full items-center justify-space px-24 mt-32 lg:px-20 px-5 lg:flex-row max-sm:block'>
         <div className='flex flex-col gap-y-10'>
           <div className='w-full max-sm:w-full'>
             <h1
@@ -22,7 +24,8 @@ const Home = () => {
               data-aos-duration='700'
               className='max-sm:text-2xl max-sm:w-full font-ui font-semibold text-4xl'
             >
-              We Will Deliver Your <br /> Packages Anywhere!
+              {t('homepage.headercontent')} <br />{' '}
+              {t('homepage.headercontent2')}
             </h1>
           </div>
           <div

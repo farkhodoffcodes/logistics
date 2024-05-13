@@ -10,7 +10,7 @@ const About = () => {
       <div className='p-0 m-0'>
         <img src={tracking} alt='tracking' />
       </div>
-      <div className='flex justify-center max-sm:block'>
+      <div className='flex justify-center max-sm:block pl-20'>
         <div className='lg:w-6/12'>
           <h4
             data-aos='fade-right'
